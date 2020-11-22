@@ -1,0 +1,192 @@
+html{
+	height: 100%;
+
+  }
+
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background: #CBBB9A url(../images/Wiese.jpg) ;
+	background-size: cover;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #545454;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+h1, h2 {
+	margin: 0;
+	padding: 0;
+	text-transform: uppercase;
+	font-weight: 100;
+	font-family: 'Oswald', sans-serif;
+
+}
+
+h2 {
+	padding: 0px 0px 5px 0px;
+	font-size: 2em;
+}
+
+
+/** Der WRAPPER */
+
+#wrapper {
+	overflow: hidden;
+	width: 1200px;
+	margin: 50px auto;
+	background: #a5d4a981;
+
+	box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.219);
+}
+
+#logo
+{
+	float: left;
+	width: 250px;
+	padding: 30px 0px 0px 50px;
+	text-transform: uppercase;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#logo h1
+{
+	padding: 5px 10px 0px 0px;
+}
+
+#logo h1 a
+{
+
+	font-size: 2.5em;
+	font-weight: 800;
+	color: #FFFFFF;
+}
+
+
+/* Das Menu */
+
+#menu
+{
+	float: right;
+	width: 750px;
+	padding: 60px 50px 0px 0px;
+
+}
+
+
+
+#menu li
+{
+	float: right;
+	list-style: none;
+}
+
+#menu a
+{
+	length: 2000px;
+	margin-left: 1px;
+	padding: 5px 0px 7px 30px;
+	letter-spacing: 1px;
+	text-decoration: none;
+	text-align: :left;
+	text-transform: uppercase;
+	font-family: 'roboto';
+	font-size: 14px;
+	font-weight: 500;
+	color: #FFFFFF;
+}
+
+
+
+#UKasten {
+	overflow: hidden;
+	width: 5200px;
+	padding: 50px 50px;
+	background: #2b2a2ada;
+	size: auto;
+	color: #cac3c3;
+}
+
+
+/**Schrift unterm Bild**/
+
+#Allgold-Text {
+	text-decoration: none;
+	width: 1050px;
+}
+
+
+#inventarauflistung  {
+	word-spacing: 50px;
+	padding: 50px 0px 70px 30px;
+	letter-spacing: 1px;
+	text-align:center;
+	text-transform: uppercase;
+	font-family: 'roboto';
+	font-size: 14px;
+	font-weight: 500;
+	color: #657763;
+	list-style-type: circle;
+}
+
+
+
+
+#inventarauflistung li{
+	list-style-type: circle;
+	display: inline;
+	text-decoration: none;
+	list-style: none;
+	float: none;
+	color: #657763;
+	background-color: white;
+}
+
+#inventarauflistung a:link, a:visited {
+  background-color: white;
+  color: black;
+  border: 2px solid green;
+  padding: 20px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+#inventarauflistung a:hover, a:active {
+	background-color: inherit;
+  color: blue;
+}
+
+#footer{
+	overflow: auto;
+	background-color: aliceblue;
+	width: 1200px;
+	margin: 50px auto;
+	background: #2d352d00;
+	box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0);
+	text-transform: uppercase;
+	text-orientation: sideways-right;
+	text-decoration-color: azure;
+	text-decoration: none;
+}
+#footer-list {
+	list-style-type: none;
+	color: aliceblue;
+	text-decoration: none
+}
+
+#footer-list li {
+	display: inline;
+  padding-right: 100;
+  font-size: 1.5em;
+
+}
+
+#footer a {
+		text-decoration: none;
+		width: 1200px;
+		background: #2d352d00;
+		color: white;
+}
