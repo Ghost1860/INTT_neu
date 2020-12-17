@@ -21,11 +21,11 @@
 		<div id="menu">
 			<ul>
 				<!--<h1>Verkaufstellen</h1>>-->
-				<li><a href="reporting.html" accesskey="2" title="">Reporting </a></li>
-				<li><a href="preislisten.html" accesskey="3" title="">Preislisten</a></li>
-				<li><a href="inventarverwaltung.html" accesskey="4" title="">Inventarverwaltung</a></li>
-				<li><a href="verkaufserfassung.html" accesskey="5" title="">Verkaufserfassung</a></li>
-
+        <li><a href="preislisten.html"  title="Preislisten">Preislisten</a></li>
+				<li><a href="reporting.html" title="ReportingApp">Reporting </a></li>
+				<li><a href="VerkaufsstelleApp.html" title="VerkaufsstellenApp">Verkaufsstellen </a></li>
+				<li><a href="lieferantenApp.html" title="LieferantenApp">Lieferanten</a></li>
+				<li><a href="inventarverwaltung.html" title="Inventar">Inventar</a></li>
 
 
 	</div>
@@ -35,7 +35,7 @@
 			<h2>Neues Produkt hinzufügen: </h2>
 
       <div id="content">
-        <form class="form-horizontal" action="../php/product++Rest.php" method="POST">
+        <form class="form-horizontal" action="../php/productREST.php" method="POST">
           <fieldset>
             <input type="hidden" name="action" value = "POST">
             <!-- Form Name -->
@@ -74,16 +74,10 @@
                 <input id="durability" name="durability" placeholder="12" class="form-control input-md" required="" type="text">
               </div>
             </div>
-
-
                 </select>
               </div>
             </div>
 
-            <!-- Text input-->
-
-
-            <!-- Button -->
             <div class="form-group">
               <label class="col-md-4 control-label" for="open">Produkt hinzufügen</label>
               <div class="col-md-4">
@@ -96,6 +90,7 @@
       <div id="menuefooter" class="clmenuefooter">
       </div>
       <div id="bottom">
+
       </div>
     </div>
 

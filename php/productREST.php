@@ -1,10 +1,10 @@
 <?php
 
 // include necessary classes
-include('station.php');
+include('product.php');
 
 
-$station = new station();
+$product = new product();
 $data = array_merge($_GET, $_POST);
 $method = $data['action'];
 $retlnk = '<br> <a href="../index.html"> zur&uuml;ck zur Homeseite </a>';
@@ -14,16 +14,24 @@ $retlnk = '<br> <a href="../index.html"> zur&uuml;ck zur Homeseite </a>';
 switch ($method)
 {
   case 'GET':
-  $sql = $station->getAllStations();
-    header('Content-type: application/json; charset=utf-8');
-    echo json_encode($sql);
+
+    	$sql = $product->getAllProducts();
+        header('Content-type: application/json; charset=utf-8');
+        echo json_encode($sql);
+
+
     break;
 
+
   case 'POST':
-    $sql = $station->addStation($data);
+    $sql = $product->addProduct($data);
     echo "Antwort: ".$sql.$retlnk;
     break;
 
+
+
 }
+
+
 
 ?>

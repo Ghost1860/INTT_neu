@@ -1,6 +1,6 @@
-function allProducts()
+function allRefill()
 {
-	var url = "../php/productREST.php";
+	var url = "../php/refillREST.php";
 	var method = "action=GET";
 	url += "?"+method;
 
@@ -10,19 +10,19 @@ function allProducts()
 	{
 		if(request.status == 200)
 		{
-			var productlist = request.responseText;
+			var refilllist = request.responseText;
 
 
                 //getTable header for data
-				var url2 = "../includes/producttable.json";
+				var url2 = "../includes/refilltable.json";
 	            var request2 = new XMLHttpRequest();
 	            request2.open("GET", url2);
 	            request2.onload = function()
 	            {
 		           if(request2.status == 200)
 		           {
-			           var producttable = request2.responseText;
-			           listProduct(productlist,producttable);
+			           var refilltable = request2.responseText;
+			           listRefill(refilllist,refilltable);
 		            }
 	            };
 	            request2.send(null);
@@ -34,13 +34,13 @@ function allProducts()
 }
 
 
-function findProduct()
+function findRefill()
 {
 
-	var url = "../php/productREST.php";
+	var url = "../php/refillREST.php";
 	var method = "action=GET";
-	var descVal = document.getElementById("productID").value;
-	var descName = document.getElementById("productID").name;
+	var descVal = document.getElementById("refillID").value;
+	var descName = document.getElementById("refillID").name;
 	url += "?"+method+"&"+descName+"="+descVal;
 
 	var request = new XMLHttpRequest();
@@ -59,7 +59,7 @@ function findProduct()
 	            {
 		           if(request2.status == 200)
 		           {
-			           var producttable = request2.responseText;
+			           var refillttable = request2.responseText;
 			           listProduct(productlist,producttable);
 		            }
 	            };
@@ -71,52 +71,12 @@ function findProduct()
 	request.send(null);
 }
 
-/*
-function getCoords()
+function listRefill(refilllist, getrefilltable)
 {
-
-	var url = "stationREST.php";
-	var method = "action=GET";
-	var descVal = document.getElementById("stationID").value;
-	var descName = document.getElementById("stationID").name;
-	url += "?"+method+"&"+descName+"="+descVal;
-
-	var request = new XMLHttpRequest();
-	request.open("GET", url);
-	request.onload = function()
-	{
-		if(request.status == 200)
-		{
-			var stationlist = request.responseText;
-
-
-                //getTable header for data
-				var url2 = "includes/stationtable.json";
-	            var request2 = new XMLHttpRequest();
-	            request2.open("GET", url2);
-	            request2.onload = function()
-	            {
-		           if(request2.status == 200)
-		           {
-			           var stationtable = request2.responseText;
-			           listStation(stationlist,stationtable);
-		            }
-	            };
-	            request2.send(null);
-
-		}
-	};
-	request.send(null);
-}
-*/
-
-
-function listProduct(productlist, getproducttable)
-{
-	alert(productlist+getproducttable);
+	alert(refilllist+getrefilltable);
 	var list = document.getElementById("list");
-	var products = JSON.parse(productlist);
-	var producttable = JSON.parse(getproducttable);
+	var refill = JSON.parse(refilllist);
+	var refilltable = JSON.parse(getrefilltable);
 
 
 	var table = document.createElement("table");
@@ -130,7 +90,7 @@ function listProduct(productlist, getproducttable)
     var tableattr = 1;
     for(var h = 0; h<tableattr; h++)
     {
-    	var json = producttable[0]; //in this case only one object exitsts
+    	var json = refilltable[0]; //in this case only one object exitsts
     	var key = "td"+h;
     	var tableval = json[key];
     	if(tableval != undefined)
@@ -151,14 +111,14 @@ function listProduct(productlist, getproducttable)
 	var tablebody = document.createElement("tbody");
 
 
-	for(var j = 0; j < products.length; j++)
+	for(var j = 0; j < refill.length; j++)
 	{
 	    var mycurrentRow = document.createElement("tr");
 
 	    for(var i = 0; i<tableattr; i++)
 	    {
-	    	var json = producttable[0];
-	    	var jsonval = products[j];
+	    	var json = refilltable[0];
+	    	var jsonval = refill[j];
 	    	var key = "td" + i;
 	    	var value = json[key];
 	        var tableval = jsonval[value];
@@ -180,10 +140,11 @@ function listProduct(productlist, getproducttable)
 	list.appendChild(table);
 }
 
-function getProductTable()
+
+function getRefillTable()
 {
 
-	var url = "../includes/producttable.json";
+	var url = "../includes/refilltable.json";
 	var request = new XMLHttpRequest();
 	alert(url);
 	request.open("GET", url);

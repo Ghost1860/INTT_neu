@@ -2,7 +2,7 @@
 //Einfache version ohne Framework, berücksichtigt das die meißten Browser kein PUT und DELETE unterstützen
 
 
-class product
+class refill
 {
    private $db;
 
@@ -25,32 +25,12 @@ class product
       }
    }
 
-   public function addProduct($data)
+
+   public function getAllRefills()
    {
-   	   $stmt = "INSERT INTO products (
-   	   name,
-       price,
-       durability
-   	   ) VALUES (
-   	   '".$data['name']."',
-       '".$data['price']."',
-   	   '".$data['durability']."'
-   	   );";
 
-       //commit db request
-   	   $result = $this->db->query($stmt);
-
-   	   if($result == 1)
-   	   {
-   	   	 return "Product succesfully inserted.";
-   	   }
-   	   return "your statment: ".$stmt."<br /> received result:".$result;
-   }
-
-   public function getAllProducts()
-   {
-      $allProducts = array();
-      $stmt = "SELECT * FROM products;";
+      $allRefills = array();
+      $stmt = "SELECT stationID, productID, amount FROM refill WHERE amount > 0 GROUP BY  stationID, productID ;";
       $result = $this->db->query($stmt);
 
         if(empty($result))
@@ -60,10 +40,10 @@ class product
 
       while ($row = $result->fetch_assoc())
       {
-        $allProducts[] = $row;
+        $allRefills[] = $row;
       }
 
-      return  $allProducts;
+      return  $allRefills;
    }
 
 }
